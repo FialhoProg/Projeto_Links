@@ -44,7 +44,8 @@ body * {
 #container {
   /*insere as propriedades que vão haver no Div id=container*/
   border: 1px;
-  width: 360px; /*largura*/
+  width: 100%; /*largura*/
+  max-width: 588px;
   margin: 56px auto; /*o primeiro deixa um espaço do topo de 56px, o segundo centraliza o container na página. Se ouvessem mais elementos, seria atribuído nas margens em sentido horário, começando pelo topo.*/
   padding: 0 24px;
 }
