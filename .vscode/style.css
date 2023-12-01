@@ -1,0 +1,153 @@
+* {
+  /*seletor iuniversal, nesse momento vou manipular todas configurações de estilo por padrão do navegador*/
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; /*para o tamanho das caixas adaptarem o tamanho para dentro da caixa, não para fora*/
+}
+
+:root {
+  /*esse root, vai alterar as variáveis dentro do modo dark*/
+  --text-color: white;
+  --bg-url: url(/assets/bg-mobile.jpg);
+  --stroke-color-light-mode: rgba(255, 255, 255, 0.5);
+  --surface-color-light-mode: rgba(255, 255, 255, 0.1);
+  --highlight-color-light-mode: rgba(255, 255, 255, 0.2);
+  --stroke-color-dark-mode: rgba(255, 255, 255, 0.5);
+  --surface-color-dark-mode: rgba(255, 255, 255, 0.1);
+  --switch-bg-url: url(/assets/MoonStars.svg);
+}
+
+.light {
+  /*essa classe .light, vai alterar as variáveis dentro do modo light*/
+  --text-color: black;
+  --bg-url: url(/assets/bg-mobile-light.jpg);
+  --stroke-color-light-mode: rgba(0, 0, 0, 0.5);
+  --surface-color-light-mode: rgba(0, 0, 0, 0.05);
+  --highlight-color-light-mode: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(/assets/Sun.svg);
+}
+
+body {
+  /*background-image: url(/assets/bg-mobile.jpg);
+  background-repeat: no-repeat; por padrão as imagens de fundo se repetem para preencher
+  background-position: top center; centralizo a imagem na página
+  background-size: cover; cobre todo espaço da página */
+
+  background: var(--bg-url) no-repeat top center/cover; /* atalho para toda configuração do background */
+}
+
+body * {
+  /*o '*' é um seletor universal. vai alterar todas letras dentro do body*/
+  font-family: "Inter", sans-serif; /*o próprio site fontsgoogle.com fornece esse código*/
+  color: var(--text-color);
+}
+#container {
+  /*insere as propriedades que vão haver no Div id=container*/
+  border: 1px;
+  width: 360px; /*largura*/
+  margin: 56px auto; /*o primeiro deixa um espaço do topo de 56px, o segundo centraliza o container na página. Se ouvessem mais elementos, seria atribuído nas margens em sentido horário, começando pelo topo.*/
+  padding: 0 24px;
+}
+
+#profile {
+  /*esse é o pai de #profile img. está sendo usado pois img é um display inline, e não permite que eu use o margin para centralizar a imagem dentro do div profile. por isso criar esse estilo para o div profile */
+  text-align: center;
+  padding: 24px; /*preenchimento interno da caixa */
+}
+
+#profile img /*procura a IMG dentro do profile*/ {
+  width: 112px;
+  border-radius: 50%;
+}
+
+#profile p {
+  font-weight: 500; /*determina tamanho do "negrito" da letra */
+  line-height: 24px; /*determina tamanho da linha do <p> */
+}
+
+#switch {
+  position: relative; /*torna a posição de tudo que estiver dentro do switch relativo a ele*/
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  /*inserindo a estilização do botão de switch*/
+  background: white var(--switch-bg-url) no-repeat center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  position: absolute; /*torna a posição do botão absoluta, fazendo com que ele ignore todas as caixas quando for posicionado onde você queira da página (posição a qual ele é relativo por padrão, exceto quando está relativo a outra posiçao, nesse caso o switch) */
+  top: 50%;
+  z-index: 1; /*seleciona em qual camada o elemento vai ficar. nesse caso na primeira, por padrão todos elementos estão no 0 */
+  left: 0;
+  transform: translatey(-50%);
+}
+
+.light #switch button {
+  /*configura as variáveis do button no modo light*/
+  right: 0; /*posiciona o botão no lado direito enuanto estive rno light mode*/
+  left: initial; /*determina que seu ponto inicial seja a esquerda*/
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--stroke-color-dark-mode);
+  background: var(--surface-color-dark-mode);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch span {
+  background: var(--surface-color-light-mode);
+  border: 1px solid var(--stroke-color-light-mode);
+}
+
+ul {
+  list-style: none;
+  display: flex; /*faz com que os itens da linha se ajustem dentro do espaço disponível de forma flexível*/
+  flex-direction: column; /*determina que esse ajuste seja em coluna */
+  gap: 16px; /*espaçamento entre os itens dentro da lista */
+  padding: 24px;
+}
+
+ul li a {
+  border: var(--stroke-color-light-mode);
+  display: flex; /*faz com que o atributo 'a' ocupe todo espaço da linha disponível (quase um display block) mas mais flexível. */
+  justify-content: center; /*alinha os itens dentro do espaço disponível da linha. nesse caso no centro */
+  padding: 16px 24px; /*espaçamento interno*/
+  border-radius: 8px; /*deixa a borda com um aredondado suave*/
+  border: 1px solid var(--stroke-color-light-mode);
+  background: var(--surface-color-light-mode);
+  backdrop-filter: blur(4px);
+  text-decoration: none; /*retira as linhas dos links*/
+  font-weight: 500; /*faz com que a fonte fique mais "negrito" */
+  transition: background 0.3s;
+}
+ul li a:hover {
+  border: 2px solid var(--surface-color-light-mode);
+  background: rgba(255, 255, 255, 0.05);
+}
+#social {
+  display: flex;
+  padding: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  font-size: 24px;
+}
+
+#social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: var(--text-color) 0.2;
+  border-radius: 50%;
+}
+
+#social a:hover {
+  background: var(--highlight-color-light-mode);
+}

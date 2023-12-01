@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+  <!--essa classe light permite o Js alterar as prorpiedades da página-->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--link para utilizar as fontes de texto estilizadas. site ' fonts.google.com '  -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Links sociais</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Importo o CSS de outro documento -->
+  </head>
+  <body>
+    <div id="container">
+      <!--Caixa genérica. entretanto o id torna essa div, a div única "container"-->
+      <div id="profile">
+        <img
+          src="/assets/fotoperfil.png"
+          alt="foto de um pug desenvolvedor usando óculos"
+        />
+        <p id="nome">@fialho.prog</p>
+      </div>
+      <div id="switch" onclick="togglemode()">
+        <button>
+          <!--Esse button foi inserido para conter a imagem moonstars.svg para fazer o switch, poderia ser qualquer tag-->
+        </button>
+        <span> </span>
+      </div>
+      <ul>
+        <li><a href="#">Inscreva-se no NLW</a></li>
+        <li><a href="#">Baixar e-book</a></li>
+        <li><a href="#">veja meu portifólio</a></li>
+        <li><a href="#">Conheça o explorer</a></li>
+      </ul>
+      <div id="social">
+        <a href="Github" target="blank"
+          ><ion-icon name="logo-github"></ion-icon
+        ></a>
+        <!--o target blankm faz com que abra uma nova aba ao clickar no icone e não sair da página-->
+        <a href="linkedin" target="blank"
+          ><ion-icon name="logo-linkedin"></ion-icon
+        ></a>
+        <a href="instagram" target="blank"
+          ><ion-icon name="logo-instagram"></ion-icon
+        ></a>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./switchmode.js"></script>
+  </body>
+</html>
