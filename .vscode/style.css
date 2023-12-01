@@ -83,12 +83,12 @@ body * {
   z-index: 1; /*seleciona em qual camada o elemento vai ficar. nesse caso na primeira, por padrão todos elementos estão no 0 */
   left: 0;
   transform: translatey(-50%);
+
+  animation: slide-out 0.3s;
 }
 
 .light #switch button {
-  /*configura as variáveis do button no modo light*/
-  right: 0; /*posiciona o botão no lado direito enuanto estive rno light mode*/
-  left: initial; /*determina que seu ponto inicial seja a esquerda*/
+  animation: slide-in 0.3s forwards;
 }
 #switch span {
   display: block;
@@ -160,5 +160,23 @@ ul li a:hover {
 
   .light {
     --bg-url: url(/assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
