@@ -20,7 +20,7 @@
 .light {
   /*essa classe .light, vai alterar as variáveis dentro do modo light*/
   --text-color: black;
-  --bg-url: url(assets/Avatar.jpg);
+  --bg-url: url(assets/bg-mobile-light.jpg);
   --stroke-color-light-mode: rgba(0, 0, 0, 0.5);
   --surface-color-light-mode: rgba(0, 0, 0, 0.05);
   --highlight-color-light-mode: rgba(0, 0, 0, 0.1);
