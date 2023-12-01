@@ -8,10 +8,10 @@ function togglemode() {
 
   //se o html contém o light na sua lista de classes
   if (html.classList.contains("light")) {
-    img.setAttribute("src", "/assets/fotoperfil.png")
+    img.setAttribute("src", "assets/fotoperfil.png")
 
     //caso não contenha execute...
   } else {
-    img.setAttribute("src", "/assets/Avatar.jpg")
+    img.setAttribute("src", "assets/Avatar.jpg")
   }
 }
