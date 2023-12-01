@@ -8,23 +8,23 @@
 :root {
   /*esse root, vai alterar as variáveis dentro do modo dark*/
   --text-color: white;
-  --bg-url: url(/assets/bg-mobile.jpg);
+  --bg-url: url(assets/bg-mobile.jpg);
   --stroke-color-light-mode: rgba(255, 255, 255, 0.5);
   --surface-color-light-mode: rgba(255, 255, 255, 0.1);
   --highlight-color-light-mode: rgba(255, 255, 255, 0.2);
   --stroke-color-dark-mode: rgba(255, 255, 255, 0.5);
   --surface-color-dark-mode: rgba(255, 255, 255, 0.1);
-  --switch-bg-url: url(/assets/MoonStars.svg);
+  --switch-bg-url: url(assets/MoonStars.svg);
 }
 
 .light {
   /*essa classe .light, vai alterar as variáveis dentro do modo light*/
   --text-color: black;
-  --bg-url: url(/assets/bg-mobile-light.jpg);
+  --bg-url: url(assets/Avatar.jpg);
   --stroke-color-light-mode: rgba(0, 0, 0, 0.5);
   --surface-color-light-mode: rgba(0, 0, 0, 0.05);
   --highlight-color-light-mode: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(/assets/Sun.svg);
+  --switch-bg-url: url(assets/Sun.svg);
 }
 
 body {
@@ -155,11 +155,11 @@ ul li a:hover {
 
 @media (min-width: 700px) {
   :root {
-    --bg-url: url(/assets/bg-desktop.jpg);
+    --bg-url: url(assets/bg-desktop.jpg);
   }
 
   .light {
-    --bg-url: url(/assets/bg-desktop-light.jpg);
+    --bg-url: url(assets/bg-desktop-light.jpg);
   }
 }
 
